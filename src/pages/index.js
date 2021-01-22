@@ -1,63 +1,64 @@
-import { Link } from "gatsby"
-import * as React from "react"
+import { Link } from "gatsby";
+import * as React from "react";
+import Layout from "../components/layout";
 
 // styles
 const pageStyles = {
   color: "#232129",
   padding: "96px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+};
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 320,
-}
+};
 const headingAccentStyles = {
   color: "#663399",
-}
+};
 const paragraphStyles = {
   marginBottom: 48,
-}
+};
 const codeStyles = {
   color: "#8A6534",
   padding: 4,
   backgroundColor: "#FFF4DB",
   fontSize: "1.25rem",
   borderRadius: 4,
-}
+};
 const listStyles = {
   marginBottom: 96,
   paddingLeft: 0,
-}
+};
 const listItemStyles = {
   fontWeight: "300",
   fontSize: "24px",
   maxWidth: "560px",
-}
+};
 
 const linkStyle = {
   color: "#8954A8",
   fontWeight: "bold",
   fontSize: "16px",
   verticalAlign: "5%",
-}
+};
 
 const docLinkStyle = {
   ...linkStyle,
   listStyleType: "none",
   marginBottom: 24,
-}
+};
 
 const descriptionStyle = {
   color: "#232129",
   fontSize: "14px",
-}
+};
 
 const docLink = {
   text: "Documentation",
   url: "https://www.gatsbyjs.com/docs/",
   color: "#8954A8",
-}
+};
 // data
 const links = [
   {
@@ -95,10 +96,12 @@ const links = [
       "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
     color: "#000000",
   },
-]
+];
 
 // markup
-export default () => <>
-<h1>Home</h1>
-<Link to="/about">Learn about this website</Link>
-</>
+export default () => (
+  <Layout>
+    <h1>Home</h1>
+    <Link to="/about">Learn about this website</Link>
+  </Layout>
+);
