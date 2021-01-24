@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "react-gatsby-app",
+    title: "React Gatsby App",
+    description: "A site built while learing Gatsby",
   },
-  plugins: ['gatsby-plugin-emotion'],
+  plugins: ["gatsby-plugin-emotion", "gatsby-plugin-react-helmet"],
 };
