@@ -6,13 +6,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-react-helmet",
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `pages`,
-    //     path: `${__dirname}/src/pages/`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
     // {
     //   resolve: "gatsby-plugin-page-creator",
     //   options: {

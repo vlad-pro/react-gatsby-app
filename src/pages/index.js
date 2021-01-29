@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import Layout from "../components/layout";
+import usePosts from "../components/hooks/use-posts";
 
 // styles
 const pageStyles = {
@@ -99,9 +100,17 @@ const links = [
 ];
 
 // markup
-export default () => (
-  <Layout>
-    <h1>Home</h1>
-    <Link to="/about">Learn about this website</Link>
-  </Layout>
-);
+export default () => {
+  const posts = usePosts();
+  return (
+    <Layout>
+      <h1>Home</h1>
+      <Link to="/about">Learn about this website</Link>
+
+      <h2>Blog Posts</h2>
+      {posts.map((post) => (
+        <pre>{JSON.stringify(post, null, 2)}</pre>
+      ))}
+    </Layout>
+  );
+};
