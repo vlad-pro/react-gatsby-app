@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import * as React from "react";
 import Layout from "../components/layout";
 import usePosts from "../components/hooks/use-posts";
+import PostPreview from "../components/post-preview";
 
 // styles
 const pageStyles = {
@@ -109,7 +110,7 @@ export default () => {
 
       <h2>Blog Posts</h2>
       {posts.map((post) => (
-        <pre>{JSON.stringify(post, null, 2)}</pre>
+        <PostPreview key={post.slug} post={post} />
       ))}
     </Layout>
   );
