@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link, graphql, useStaticQuery } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
 
-const ImageBackground = styled("div")`
-  background-image: url("/images/van-mountains.jpg");
+const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;
   background-size: cover;
   height: 35vh;
 
-  +*{
-    margin-top:0;
+  + * {
+    margin-top: 0;
   }
-
 `;
 
 const TextBox = styled("div")`
@@ -40,8 +39,20 @@ const TextBox = styled("div")`
 `;
 
 const Hero = () => {
+  const {image} = useStaticQuery(graphql`
+  query{
+    file(relativePath: {eq: "van-mountains.jpg"}) {
+      childImageSharp{
+        fluid{
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+  `)
+
   return (
-    <ImageBackground>
+    <ImageBackground Tag="section" fluid={image.sharp.fluid}>
       <TextBox>
         <h1>Gatsby Test Site</h1>
         <p>
