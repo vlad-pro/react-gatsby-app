@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Link } from "gatsby";
+import Image from "gatsby-image";
 import ReadLink from "./read-link";
 
 const PostPreview = ({ post }) => {
@@ -16,6 +17,9 @@ const PostPreview = ({ post }) => {
         }
       `}
     >
+      <Link to={post.slug}>
+        <Image />
+      </Link>
       <h3>
         <Link to={post.title}>{post.title}</Link>
       </h3>
